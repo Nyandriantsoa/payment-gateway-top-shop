@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CreditCard } from '../domain/credit-card';
+import { CreditCardService } from '../services/credit-card.service'
 
 @Component({
   selector: 'app-visa',
