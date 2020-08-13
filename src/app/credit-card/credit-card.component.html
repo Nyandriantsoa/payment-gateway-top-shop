@@ -1,0 +1,35 @@
+<div class="spacer container">
+    <h1 style="float: left;"> List of {{type}} credit card </h1> 
+    <button (click) = "refresh()" style="margin-left: 10%;" mat-raised-button color="primary"> Refresh </button>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Card number</th>
+            <th scope="col">Full name</th>
+            <th scope="col">Name on card</th>
+            <th scope="col">Expiration Date</th>
+            <th scope="col">Security Digit</th>
+            <th scope="col">Current Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+            <ng-template *ngIf="cards.length > 0 else noData"  ngFor let-card [ngForOf]= "cards" let-i= "index" >
+                <tr>
+                    <th class="col-md-1" scope="row">{{i + 1}}</th>
+                    <td class="col-md-3" > {{card.cardNumber}} </td>
+                    <td class="col-md-3" > {{card.lastName}} {{card.firstName}} </td>
+                    <td class="col-md-2" > {{card.nameOnCard}} </td>
+                    <td class="col-md-1" > {{card.expirationDate}} </td>
+                    <td class="col-md-1" > {{card.securityDigit}} </td>
+                    <td class="col-md-1" > {{card.currentAmount}} </td>
+                </tr>
+            </ng-template>
+            <ng-template #noData> 
+                <tr> 
+                    <td colspan="7" style="text-align: center;"> No Data Available </td>
+                </tr> 
+            </ng-template>
+        </tbody>
+      </table>
+</div>

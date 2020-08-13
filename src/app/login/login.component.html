@@ -1,0 +1,14 @@
+<div class="wrapper fadeInDown">
+    <div style="padding-top: 50px; padding-bottom: 30px;" id="formContent">
+
+        <h1> Log In </h1>
+
+        <form #f="ngForm" (ngSubmit)="submit(f)" novalidate>
+            <input type="text" id="login" required class="fadeIn second" name="login" ngModel placeholder="login">
+            <input type="password" id="password" required class="fadeIn third" name="pass" ngModel placeholder="password">
+            
+            <button style="margin-top: 20px;" mat-raised-button color="primary" type="submit" > Submit </button>
+        </form>
+
+    </div>
+</div>
